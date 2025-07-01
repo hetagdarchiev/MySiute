@@ -1,0 +1,30 @@
+@use '../../style/helpers' as *;
+
+.link {
+  padding: 5px;
+  position: relative;
+  white-space: nowrap;
+  transition: var(--tr-slow);
+  @include tablet {
+    margin-inline: auto;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    background-color: var(--aqua);
+    left: 50%;
+    border-radius: var(--br-50);
+    transform: translateX(-50%);
+    transition: var(--tr-slow);
+  }
+
+  @include hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}

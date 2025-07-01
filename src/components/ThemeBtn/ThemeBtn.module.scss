@@ -1,0 +1,32 @@
+@use '../../style/helpers' as *;
+
+.theme__btn {
+  width: 70px;
+  min-width: 70px;
+  height: 30px;
+  border-radius: var(--br-50);
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 1) inset;
+  overflow: hidden;
+  min-height: 20px;
+}
+
+.theme__btn__moon {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  background-color: var(--aqua);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: var(--br-50);
+  @include absoliteVertical;
+  background-image: url("../../assets/ico/moon.svg");
+  transition: var(--tr-slow);
+}
+.theme__btn__circle
+{
+  background-color: transparent;
+  background-image: url("../../assets/ico/moon.svg");
+  transform: translate(135%, -50%);
+}

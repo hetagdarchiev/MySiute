@@ -1,0 +1,10 @@
+@use '../../style/helpers' as *;
+.logo {
+  transition: var(--tr-slow);
+  fill: var(--aqua);
+  min-width: 50px;
+
+  @include hover {
+    fill: var(--gray);
+  }
+}

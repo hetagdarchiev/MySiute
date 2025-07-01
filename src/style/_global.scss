@@ -1,0 +1,27 @@
+@use './variables' as *;
+@use "./helpers" as *;
+
+body {
+  background-color: var(--dark);
+  font-family: var(--Mons-Regu), sans-serif;
+  color: var(--gray);
+  max-width: 1930px;
+  margin-inline: auto;
+  font-size: rem(28);
+}
+
+h1, h2, h3 {
+  font-family: var(--Mons-Bold), serif;
+  color: var(--gray);
+  transition: var(--tr-slow);
+}
+
+button {
+  font-size: rem(24);
+}
+
+.active-f {
+  display: flex !important;
+  opacity: 100% !important;
+  visibility: visible !important;
+}

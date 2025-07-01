@@ -1,0 +1,5 @@
+@use '../style/helpers' as *;
+.container
+{
+  @include container(1440,20)
+}

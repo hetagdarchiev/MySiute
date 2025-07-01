@@ -1,0 +1,27 @@
+@use "fonts";
+
+:root {
+  --tr-fast: .1s ease-in-out;
+  --tr-slow: .3s ease-in-out;
+
+  --br-50: 50px;
+  --br-30: 30px;
+
+  --spacingSection: 200px;
+
+  --Mons-Regu: 'Montserrat-Regular';
+  --Mons-Bold: 'Montserrat-Bold';
+
+  --dark: #202833;
+  --gray: #d5d6d8;
+  --aqua: #66fcf1;
+
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body.dark {
+  --dark: #0b0c10;
+  --gray: #a8a9ac;
+  --aqua: #45a29f;
+}
