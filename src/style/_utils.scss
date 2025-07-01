@@ -1,5 +1,9 @@
 @use '../style/helpers' as *;
 .container
 {
-  @include container(1440,20)
+  @include container(1440,20);
+  @include mobile
+  {
+    @include container(1440,10)
+  }
 }

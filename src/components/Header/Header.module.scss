@@ -12,8 +12,12 @@
   animation-timeline: scroll();
   animation-fill-mode: both;
   animation-range: 5px 150px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  z-index: 99;
   @include container(1930, 20);
+  @include tablet {
+    margin-bottom: 10px;
+  }
 
   &__list {
     display: flex;

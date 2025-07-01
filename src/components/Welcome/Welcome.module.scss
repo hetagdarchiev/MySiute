@@ -1,8 +1,20 @@
+@use '../../style/helpers' as *;
+
 .welcome {
   display: flex;
   align-items: center;
+  gap: 20px;
+  padding-block: 20px;
+  @include tablet {
+    padding-block: 10px;
+    gap: 10px;
+  }
+  @include loptop {
+    flex-direction: column;
+  }
 
   &__text {
+
     .welcome__text__welcome {
       color: var(--aqua);
     }
@@ -21,6 +33,18 @@
         height: 5px;
         background-color: var(--aqua);
       }
+    }
+  }
+
+  &__image {
+    min-width: 400px;
+    @include tablet {
+      width: 100%;
+      max-width: 500px;
+      min-width: 350px;
+    }
+    @include mobile {
+      min-width: 300px;
     }
   }
 }
