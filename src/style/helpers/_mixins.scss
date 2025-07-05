@@ -51,3 +51,16 @@
     }
   }
 }
+
+@mixin imageCurrentSize($width:100%) {
+  max-width: 700px;
+  min-width: 400px;
+  @include tablet {
+    width: $width;
+    max-width: 500px;
+    min-width: 350px;
+  }
+  @include mobile {
+    min-width: 300px;
+  }
+}

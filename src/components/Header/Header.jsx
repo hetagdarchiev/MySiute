@@ -23,13 +23,13 @@ function Header() {
                             <Link href="#about">About Me</Link>
                         </li>
                         <li className={"header__list-item"} onClick={() => setBurgerOpen(false)}>
-                            <Link href="#skill">Skill</Link>
+                            <Link href="#skills">Skills</Link>
                         </li>
                         <li className={"header__list-item"} onClick={() => setBurgerOpen(false)}>
                             <Link href="#portfolio">Portfolio</Link>
                         </li>
                         <li className={"header__list-item"} onClick={() => setBurgerOpen(false)}>
-                            <Link href="#contact">Contact</Link>
+                            <Link href="#contacts">Contact</Link>
                         </li>
                     </ul>
                 </nav>

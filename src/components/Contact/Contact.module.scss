@@ -1,0 +1,22 @@
+.contact {
+  border-radius: var(--br-50);
+  border: 1px solid var(--gray);
+  padding: 15px;
+  display: flex;
+  transition: var(--tr-slow);
+
+  svg {
+    transition: var(--tr-fast);
+    display: block;
+    fill: var(--gray);
+  }
+
+  &:hover {
+    border: 1px solid var(--aqua);
+
+    svg {
+      transform: scale(1.1);
+      fill: var(--aqua);
+    }
+  }
+}

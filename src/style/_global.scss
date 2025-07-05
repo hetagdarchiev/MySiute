@@ -8,6 +8,20 @@ body {
   max-width: 1930px;
   margin-inline: auto;
   font-size: rem(28);
+  @include loptop
+  {
+    font-size: rem(24);
+  }
+  @include tablet {
+    font-size: rem(22);
+  }
+  @include mobile {
+    font-size: rem(20);
+  }
+
+  img {
+    transition: var(--tr-slow);
+  }
 
   &::-webkit-scrollbar {
     background-color: var(--dark);
@@ -21,7 +35,13 @@ body {
   }
 }
 
-h1, h2, h3 {
+body.dark {
+  img {
+    filter: brightness(75%);
+  }
+}
+
+h1, h2{
   font-family: var(--Mons-Bold), serif;
   color: var(--gray);
   transition: var(--tr-slow);
@@ -41,16 +61,14 @@ h1 {
 }
 
 h2 {
-  font-size: rem(48);
+  font-size: fluid(48, 24);
   margin-inline: auto;
   width: fit-content;
   margin-bottom: 50px;
   @include loptop {
-    font-size: rem(28);
     margin-bottom: 30px
   }
   @include mobile {
-    font-size: rem(24);
     margin-bottom: 20px
   }
 }
@@ -61,6 +79,12 @@ button {
 
 .active-f {
   display: flex !important;
+  opacity: 100% !important;
+  visibility: visible !important;
+}
+
+.active-b {
+  display: block !important;
   opacity: 100% !important;
   visibility: visible !important;
 }

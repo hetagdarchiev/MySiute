@@ -1,0 +1,62 @@
+@use '../../style/helpers' as *;
+
+.portfolio {
+  &__item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+    padding-block: 10px;
+    @include tablet {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__description {
+    ul {
+      li {
+        list-style: circle;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  &__img {
+    &__wrapper {
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      border-radius: var(--br-30);
+      border: 5px solid var(--aqua);
+      overflow: hidden;
+      height: 100vh;
+      max-height: 300px;
+      &:hover
+      {
+        img
+        {
+          transform: scale(1.1);
+        }
+      }
+      img {
+        object-fit: cover;
+        object-position: top;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  &__text__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 400px;
+    width: 100%;
+    max-width: 700px;
+  }
+}

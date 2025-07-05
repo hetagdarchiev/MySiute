@@ -10,16 +10,6 @@
   }
 
   &__img {
-    min-width: 400px;
-    @include tablet {
-      width: 100%;
-      max-width: 500px;
-      min-width: 350px;
-    }
-    @include mobile {
-      min-width: 300px;
-    }
-
     &__wrapper {
       flex-grow: 1;
     }

@@ -1,0 +1,122 @@
+@use '../../style/helpers' as *;
+
+.skill {
+
+  @include container(1000, 5);
+  overflow: hidden;
+  border-radius: var(--br-30);
+  margin-bottom: 5px;
+
+  &__img {
+    display: block;
+
+    img {
+      display: block;
+      width: 45px;
+      filter: grayscale(100%);
+    }
+    &__colorize
+    {
+      img
+      {
+        filter: grayscale(0%);
+      }
+    }
+  }
+
+  &__list {
+    &__active {
+      transform: translateY(0) scale(1) !important;
+      opacity: 100% !important;
+      visibility: visible !important;
+      filter: brightness(150%);
+      border: 1ps solid transparent;
+      animation-name: borderColorize;
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-direction: normal;
+    }
+
+    background-color: var(--dark);
+    padding-inline: 25px;
+    padding-block: 10px;
+    text-wrap: balance;
+    transition: var(--tr-slow);
+    border-bottom-right-radius: var(--br-30);
+    opacity: 0;
+    border-bottom-left-radius: var(--br-30);
+    transform: translateY(-200px) scale(0.9);
+    visibility: hidden;
+    animation-timing-function: ease;
+
+    li {
+      position: relative;
+      margin-bottom: 3px;
+
+      &::before {
+        content: "";
+        background-color: var(--aqua);
+        position: absolute;
+        transform: translateY(10px);
+        top: 0;
+        left: -20px;
+        height: 10px;
+        width: 10px;
+        border-radius: var(--br-50);
+
+      }
+    }
+  }
+
+  &__arrow__down {
+    transition: var(--tr-slow);
+    color: var(--gray);
+  }
+
+  &__arrow__up {
+    color: var(--aqua);
+    transform: rotate(180deg);
+  }
+
+  &__ico {
+    filter: brightness(75%);
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--br-30);
+    width: 100%;
+    z-index: 2;
+    background-color: var(--dark);
+    position: relative;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    transition: var(--tr-slow);
+    padding: 10px;
+    max-height: 50px;
+
+    &__active {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border: 3px solid var(--aqua);
+      padding-inline: 20px;
+    }
+
+    h3 {
+      max-width: fit-content;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@keyframes borderColorize {
+  0% {
+    border: 2px solid transparent;
+  }
+  100% {
+    border: 1px solid var(--aqua);
+  }
+}

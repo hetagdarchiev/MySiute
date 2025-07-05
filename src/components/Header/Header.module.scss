@@ -14,7 +14,7 @@
   animation-range: 5px 150px;
   margin-bottom: 20px;
   z-index: 99;
-  @include container(1930, 20);
+  @include container(1920, 20);
   @include tablet {
     margin-bottom: 10px;
   }

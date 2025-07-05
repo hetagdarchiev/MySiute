@@ -34,7 +34,12 @@ export default function AboutMe() {
                     </li>
                     <li className={style.about__list__item}>
                         <div data-aos="fade-right" data-aos-duration="1600" className={style.about__list__circle}></div>
-                        <div data-aos="fade-left" data-aos-duration="1600">Very love listen music</div>
+                        <div data-aos="fade-left" data-aos-duration="1600">I love learning and discovering new things.
+                        </div>
+                    </li>
+                    <li className={style.about__list__item}>
+                        <div data-aos="fade-right" data-aos-duration="1900" className={style.about__list__circle}></div>
+                        <div data-aos="fade-left" data-aos-duration="1900">Very love listen music</div>
                     </li>
                 </ul>
             </div>
