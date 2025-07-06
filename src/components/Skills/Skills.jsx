@@ -134,7 +134,7 @@ export default function Skills() {
                         Syntax: variables, conditions, loops, and functions.
                     </li>
                     <li>
-                        Работа с формами – $_GET, $_POST, валидация.
+                        Working with forms – $_GET, $_POST, and validation.
                     </li>
                     <li>
                         Sessions and cookies – user authentication.
