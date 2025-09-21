@@ -101,6 +101,12 @@ export default function Skills() {
                     <li>
                         Basics: components, props, and state.
                     </li>
+                    <li>
+                        Hooks: useState, useEffect, useContext, useMemo, useRef
+                    </li>
+                    <li>
+                        React Route 
+                    </li>
                 </Skill>
                 <Skill data={'fade-right'} img={other} title={'My Other skills'}>
                     <li title={'Vite'}
