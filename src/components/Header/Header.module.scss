@@ -1,4 +1,4 @@
-@use '../../style/helpers' as *;
+@use "../../style/helpers" as *;
 
 .header {
   display: flex;
@@ -26,9 +26,8 @@
       flex-direction: column;
     }
 
-    letter-spacing: .1em;
-
     &__item {
+      letter-spacing: 0.1em;
     }
   }
 
@@ -50,10 +49,11 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: 100%;
         background-color: var(--dark);
         padding-block: 100px;
+        overflow-x: hidden;
       }
     }
   }

@@ -1,6 +1,7 @@
 @use '../../style/helpers' as * ;
 
 .skills {
+  overflow: hidden;
   &__wrapper {
     h3 {
       text-align: center;

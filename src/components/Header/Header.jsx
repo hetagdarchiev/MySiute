@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 function Header() {
     const [burgerOpen, setBurgerOpen] = useState(false)
     const handleValueChange = (newValue) => {
+        
         setBurgerOpen(newValue);
     };
     useEffect(() => {

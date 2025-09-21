@@ -2,14 +2,14 @@ import Item from '../PortfolioItem/PortfolioItem.jsx'
 import library from '../../assets/img/myLibrary.png'
 import spaceDash from '../../assets/img/mySpaceDash.png'
 import myGames from '../../assets/img/myGames.png'
-
+import style from "./Portfolio.module.scss";
 export default function Portfolio() {
 
     let gitHubLinkLibrex = 'https://github.com/hetagdarchiev/librex'
     let gitHubLinkGames = 'https://github.com/hetagdarchiev/games-js'
     let gitHubSpaceDash = 'https://github.com/hetagdarchiev/siute.git'
     return (
-        <section id={'portfolio'} className={`portfolio container`}>
+        <section id={'portfolio'} className={`${style.portfolio} container`}>
             <h2>Portfolio</h2>
             <div className="portfolio-wrapper">
                 <Item img={library} title={"LibreX"} link={gitHubLinkLibrex}>
