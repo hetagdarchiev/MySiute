@@ -1,2 +1,1 @@
-<p> Its <a target="_blank" href='https://khetagdarchiev.vercel.app/'>Siute</a> about me 🙂 </p>
-
+<p> This is my  <a href='https://khetagdarchiev.vercel.app/'>website</a> about me 🙂 </p>
