@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #d9ddd6;
+  color: #24332e;
+  font:
+    15px Arial,
+    sans-serif;
+}
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b0bfb4;
+  padding: 12px 0 24px;
+}
+header a {
+  font-size: 23px;
+  font-weight: bold;
+}
+a {
+  color: inherit;
+}
+header span {
+  font-size: 12px;
+  color: #5d6e63;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 23px;
+}
+p {
+  line-height: 1.7;
+}
+button,
+.import {
+  border: 1px solid #9dad9f;
+  background: #e3e7df;
+  color: #24332e;
+  padding: 11px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font: 13px Arial;
+}
+button:hover,
+.import:hover {
+  background: #c2d5c4;
+}
+.primary {
+  background: #294d3d;
+  color: #f0f4ed;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+label {
+  display: block;
+  font-size: 13px;
+  margin: 17px 0 8px;
+  line-height: 1.5;
+}
+input,
+textarea {
+  width: 100%;
+  display: block;
+  margin-top: 7px;
+  border: 1px solid #a5b5a8;
+  border-radius: 5px;
+  background: #edf0e8;
+  color: #1a3024;
+  font: 15px Arial;
+  padding: 12px;
+}
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+input:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid #407c5f;
+  outline-offset: 3px;
+}
+#auth {
+  max-width: 440px;
+  margin: 60px auto;
+}
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #d9ddd6f5;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #a9b8ab;
+}
+.toolbar a {
+  font-size: 13px;
+}
+.toolbar .import {
+  margin: 0;
+}
+.note {
+  font-size: 13px;
+  color: #506455;
+}
+.panel {
+  border: 1px solid #b5c2b6;
+  background: #e0e5dc;
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: 8px;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.item {
+  border-top: 1px solid #b6c4b9;
+  padding: 20px 0;
+}
+.item-toolbar {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.item-toolbar span {
+  margin-right: auto;
+  font-size: 13px;
+  font-weight: bold;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+#status {
+  min-height: 26px;
+  color: #245a3c;
+}
+#status.error {
+  color: #932d2d;
+}
+dialog {
+  background: #e2e7dd;
+  border: 1px solid #8caa92;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 400px;
+}
+dialog::backdrop {
+  background: #0e2019a8;
+}
+dialog > div {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 15px;
+  }
+  .panel {
+    padding: 17px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .toolbar {
+    position: static;
+  }
+  .toolbar button,
+  .import {
+    font-size: 11px;
+    padding: 10px;
+  }
+  header span {
+    display: none;
+  }
+  .section-title h2 {
+    font-size: 20px;
+  }
+}
+/* Editor navigation and compact cards */
+.admin-shell {
+  max-width: 1240px;
+  color: var(--text);
+  padding-bottom: 80px;
+}
+.admin-shell .editor-status:empty {
+  display: none;
+}
+.admin-shell .editor-status {
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: 10px;
+}
+.admin-shell .editor-savebar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.admin-shell .toolbar {
+  position: static;
+  top: auto;
+  background: var(--bg);
+  border: 0;
+  gap: 14px;
+}
+.admin-shell .save-indicator {
+  font-size: 12px;
+  color: var(--muted);
+  margin-right: auto;
+}
+.admin-shell .save-indicator:before {
+  content: "●";
+  margin-right: 8px;
+  color: var(--muted);
+}
+.admin-shell .save-indicator.is-dirty:before {
+  color: var(--accent);
+}
+.admin-shell .editor-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+.admin-shell .editor-navigation {
+  position: sticky;
+  top: 100px;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.admin-shell .editor-navigation > p {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin: 0 12px 8px;
+}
+.admin-shell .editor-navigation a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 15px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.admin-shell .editor-navigation a[aria-current] {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.admin-shell .editor-navigation a:hover {
+  background: var(--surface-soft);
+}
+.admin-shell .editor-navigation strong {
+  font-size: 14px;
+  display: block;
+}
+.admin-shell .editor-navigation small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.admin-shell .editor-navigation b {
+  font-size: 11px;
+  color: var(--accent);
+}
+.admin-shell .editor-nav-hint {
+  padding: 12px;
+}
+.admin-shell .editor-content {
+  min-width: 0;
+}
+.admin-shell .panel {
+  scroll-margin-top: 105px;
+  background: var(--surface-raised);
+  border-color: var(--line);
+  border-radius: 14px;
+}
+.admin-shell .panel h2 {
+  margin-top: 0;
+}
+.admin-shell .section-title h2 {
+  margin-bottom: 0;
+}
+.admin-shell .section-title h2 small {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 8px;
+}
+.admin-shell .section-help,
+.admin-shell .empty-state {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.admin-shell .editor-card {
+  padding: 0;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  overflow: hidden;
+}
+.admin-shell .editor-card > summary {
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+.admin-shell .editor-card > summary::-webkit-details-marker {
+  display: none;
+}
+.admin-shell .editor-card > summary strong {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+.admin-shell .editor-card > summary small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+.admin-shell .card-edit {
+  font-size: 11px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.admin-shell .card-edit:after {
+  content: " ＋";
+}
+.admin-shell .editor-card[open] .card-edit:after {
+  content: " −";
+}
+.admin-shell .editor-card-body {
+  padding: 0 18px 20px;
+  border-top: 1px solid var(--line);
+}
+.admin-shell .item-toolbar {
+  padding-top: 14px;
+}
+.admin-shell .editor-tools {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.admin-shell .editor-tools .import {
+  margin: 0;
+}
+.admin-shell button,
+.admin-shell .import {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+.admin-shell .primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.admin-shell input,
+.admin-shell textarea {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--line);
+}
+.admin-shell :is(input, textarea, button, summary, a):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+@media (max-width: 800px) {
+  .admin-shell .editor-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .admin-shell .editor-navigation {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+    padding-top: 16px;
+  }
+  .admin-shell .editor-navigation > p,
+  .admin-shell .editor-navigation small,
+  .admin-shell .editor-navigation b {
+    display: none;
+  }
+  .admin-shell .editor-navigation a {
+    padding: 12px 6px;
+    justify-content: center;
+    text-align: center;
+  }
+  .admin-shell .editor-navigation strong {
+    font-size: 12px;
+  }
+  .admin-shell .save-indicator {
+    width: 100%;
+  }
+  .admin-shell .toolbar {
+    gap: 10px;
+    padding: 12px 0;
+  }
+  .admin-shell .panel {
+    scroll-margin-top: 140px;
+  }
+  .admin-shell .toolbar .primary {
+    margin-left: auto;
+  }
+  .admin-shell .section-title {
+    gap: 10px;
+  }
+  .admin-shell .editor-card > summary {
+    padding: 14px;
+  }
+  .admin-shell .card-edit {
+    font-size: 10px;
+  }
+}

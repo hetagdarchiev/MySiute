@@ -1,0 +1,20 @@
+/* The real new page is revealed inside a circle; no solid-color overlay. */
+html.theme-wave *,
+html.theme-wave *::before,
+html.theme-wave *::after {
+  transition: none !important;
+}
+html.theme-wave::view-transition-group(root) {
+  animation: none;
+}
+html.theme-wave::view-transition-old(root),
+html.theme-wave::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+html.theme-wave::view-transition-old(root) { z-index: 1; }
+html.theme-wave::view-transition-new(root) {
+  z-index: 2;
+  will-change: clip-path;
+}
+html.theme-wave::view-transition { pointer-events: none; }

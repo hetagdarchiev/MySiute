@@ -1,0 +1,120 @@
+{
+  "summary": "Fullstack-разработчик с сильной стороной во frontend. Создаю интерфейсы на React и Next.js, работаю с серверной логикой и продолжаю углублять знания в backend.",
+  "bio": [
+    "Я Дарчиев Хетаг Олегович, fullstack-разработчик с фокусом на frontend. Работаю с React и Next.js, стилизую интерфейсы с помощью Tailwind CSS, CSS и SCSS. В backend есть практические знания, которые продолжаю развивать.",
+    "Мне интересна не только логика приложения, но и его визуальная сторона. Разбираюсь в Figma и Pixso, работаю с инструментами видео и 3D. Сейчас изучаю backend, чтобы глубже понимать устройство веб-приложений."
+  ],
+  "skills": [
+    {
+      "title": "Frontend",
+      "description": "Интерфейсы, компоненты и стили",
+      "items": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "CSS",
+        "SCSS",
+        "Bootstrap"
+      ]
+    },
+    {
+      "title": "Логика и инструменты",
+      "description": "Состояние, валидация и рабочий процесс",
+      "items": [
+        "Zustand",
+        "Zod",
+        "Routing",
+        "State",
+        "npm",
+        "Git / GitHub"
+      ]
+    },
+    {
+      "title": "Языки и данные",
+      "description": "Развиваюсь в backend-разработке",
+      "items": [
+        "C#",
+        "PHP",
+        "Go",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Дизайн и медиа",
+      "description": "Макеты, графика, видео и 3D",
+      "items": [
+        "Figma",
+        "Pixso",
+        "Photoshop",
+        "Premiere Pro",
+        "After Effects",
+        "Blender",
+        "Cinema 4D"
+      ]
+    },
+    {
+      "title": "AI-инструменты",
+      "description": "Помощники в повседневной работе",
+      "items": [
+        "ChatGPT",
+        "Gemini",
+        "Claude",
+        "Cursor"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Comunicore",
+      "category": "ВЕБ-ПЛАТФОРМА",
+      "description": "Дискуссионный форум с профилями, публикациями и аналитикой активности. Fullstack-проект с отдельными frontend и backend.",
+      "tags": [
+        "Next.js",
+        "React",
+        "Go",
+        "PostgreSQL"
+      ],
+      "url": "https://github.com/Comunicore/comunicore",
+      "demo": "https://comunicore.mooo.com/",
+      "details": "В репозитории описаны авторизация, работа с контентом и медиа, API-контракт и сбор метрик. Проект находится в активной разработке."
+    },
+    {
+      "title": "HelpEnd",
+      "category": "ИНСТРУМЕНТЫ ДЛЯ FRONTEND",
+      "description": "Помощник разработчика: генераторы CSS-теней и градиентов, инструменты для Flexbox и Grid, справочные материалы по SCSS.",
+      "tags": [
+        "React",
+        "SASS",
+        "Vite"
+      ],
+      "url": "https://github.com/hetagdarchiev/HelpEnd",
+      "demo": "https://help-end.vercel.app/home",
+      "details": "Настройка CSS через визуальные элементы управления и копирование готового кода для использования в проектах."
+    },
+    {
+      "title": "To-Do List",
+      "category": "ВЕБ-ПРИЛОЖЕНИЕ",
+      "description": "Приложение для управления задачами с сохранением данных в браузере, датой создания и поддержкой клавиатуры.",
+      "tags": [
+        "React",
+        "SCSS",
+        "localStorage"
+      ],
+      "url": "https://github.com/hetagdarchiev/To-Do-List-",
+      "demo": "",
+      "details": "Добавление и удаление задач, автоматическое сохранение и адаптивный интерфейс. Исходный код доступен в репозитории."
+    },
+    {
+      "title": "Console Tetris",
+      "category": "КОНСОЛЬНАЯ ИГРА",
+      "description": "Реализация тетриса в консоли на C# — проект за пределами веб-интерфейсов.",
+      "tags": [
+        "C#",
+        "Console"
+      ],
+      "url": "https://github.com/hetagdarchiev/tetris-in-the-console",
+      "demo": "",
+      "details": "Код проекта можно посмотреть в GitHub-репозитории."
+    }
+  ]
+}

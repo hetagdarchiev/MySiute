@@ -1,0 +1,285 @@
+/* Eclectic and serene: terracotta, slate, dusty blue, stone and olive. */
+:root,
+html[data-theme="light"] {
+  --bg: #e6e2dc;
+  --text: #34343c;
+  --muted: #65635f;
+  --line: #bdb6aa;
+  --accent: #844d36;
+  --coral: #844d36;
+  --peach: #86b3d1;
+  --sand: #c8c1ab;
+  --surface: #d5cfc5;
+  --surface-raised: #ece8e0;
+  --surface-soft: #d8d5cd;
+  --on-accent: #253743;
+  --photo-ring: #8e8268;
+  --shadow: #47485319;
+}
+html[data-theme="dark"] {
+  --bg: #292a30;
+  --text: #e9e5dc;
+  --muted: #bcb7af;
+  --line: #5b5960;
+  --accent: #b1d3e9;
+  --coral: #b48369;
+  --peach: #86b3d1;
+  --sand: #514c40;
+  --surface: #35363e;
+  --surface-raised: #41424b;
+  --surface-soft: #303138;
+  --on-accent: #253743;
+  --photo-ring: #8e8268;
+  --shadow: #15151c40;
+}
+.editorial-hero::before {
+  border-style: solid;
+  border-color: var(--line);
+  opacity: 0.45;
+  width: min(43vw, 580px);
+  border-radius: 48% 52% 63% 37% / 45% 38% 62% 55%;
+  animation: serene-orbit 32s ease-in-out infinite;
+}
+.hero-photo {
+  border-radius: 120px 12px 12px 12px;
+  box-shadow: 14px 16px 0 var(--sand);
+}
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #ffffff28;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.hero-copy h1 .serif {
+  color: var(--accent);
+}
+.project-card {
+  border-radius: 14px;
+}
+.project-art {
+  height: 180px;
+}
+.project-card:nth-child(1) .project-art {
+  background: #844d36;
+}
+.project-card:nth-child(2) .project-art {
+  background: #474853;
+}
+.project-card:nth-child(3) .project-art {
+  background: #86b3d1;
+}
+.project-card:nth-child(4) .project-art {
+  background: #8e8268;
+}
+.project-card:nth-child(1) .project-monogram,
+.project-card:nth-child(1) .project-art-label,
+.project-card:nth-child(2) .project-monogram,
+.project-card:nth-child(2) .project-art-label {
+  color: #f0e7db;
+}
+.project-card:nth-child(3) .project-monogram,
+.project-card:nth-child(3) .project-art-label,
+.project-card:nth-child(4) .project-monogram,
+.project-card:nth-child(4) .project-art-label {
+  color: #292a30;
+}
+.project-art::after {
+  border-color: #eae7dc55;
+  width: 220px;
+  height: 220px;
+}
+.project-card:hover .project-art::after {
+  transform: scale(1.2) translate(-35px, 25px) rotate(15deg);
+  border-radius: 40%;
+}
+.ticker {
+  background: #474853;
+  color: #eae7dc;
+  padding-block: 21px;
+}
+.ticker > div {
+  font-size: 19px;
+  letter-spacing: 5px;
+}
+.about-photo img {
+  border-radius: 12px 12px 70px 12px;
+}
+.capability {
+  padding-top: 34px;
+}
+.contact {
+  background: var(--surface-soft);
+}
+.contact-title .circle-link {
+  background: var(--peach);
+  color: var(--on-accent);
+  border-color: transparent;
+}
+.contact-links > a:hover {
+  background: var(--surface-raised);
+}
+.tags .shatter-tag {
+  position: relative;
+  appearance: none;
+  display: inline-block;
+  margin: 0;
+  font:
+    11px "Golos Text",
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--surface-raised);
+  white-space: nowrap;
+  cursor: pointer;
+  transform: translateY(0);
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s,
+    opacity 0.55s,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tags .shatter-tag.featured {
+  border-color: var(--accent);
+}
+.tags .shatter-tag:hover {
+  background: var(--peach);
+  color: var(--on-accent);
+  border-color: var(--peach);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px var(--shadow);
+}
+.tags .shatter-tag:active {
+  transform: translateY(-1px) scale(0.97);
+}
+.tags .shatter-tag:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.tags .shatter-tag.is-shattered {
+  opacity: 0;
+  pointer-events: none;
+  transition: none;
+}
+.shatter-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+.shatter-shard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+.motion-ready .reveal:not(.is-visible) .shatter-tag {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.motion-ready .reveal.is-visible .shatter-tag:not(.is-shattered) {
+  transition-delay: var(--tag-delay, 0ms);
+}
+.motion-off .tags .shatter-tag {
+  opacity: 1;
+  transform: none;
+}
+.stack-hint {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0 0 25px;
+}
+.github-strip {
+  border-radius: 9px;
+  overflow: hidden;
+  position: relative;
+}
+.github-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    #86b3d122 50%,
+    transparent 80%
+  );
+  transform: translateX(-110%);
+  transition: transform 1s ease;
+  pointer-events: none;
+}
+.github-strip:hover::after {
+  transform: translateX(110%);
+}
+.hero-copy .title-line {
+  animation-duration: 1.6s;
+}
+.motion-ready .photo-reveal {
+  transition-duration: 1.8s;
+}
+.motion-ready .project-card.reveal {
+  transition-duration: 1.35s;
+}
+.growth-steps article {
+  border-radius: 0 10px 10px 0;
+  transition:
+    background 0.4s,
+    padding 0.5s;
+}
+.growth-steps article:hover {
+  background: var(--surface);
+  padding-left: 14px;
+}
+@keyframes serene-orbit {
+  0%,
+  100% {
+    transform: rotate(-8deg) scale(0.95);
+  }
+  50% {
+    transform: rotate(12deg) scale(1.03);
+  }
+}
+@media (max-width: 600px) {
+  .hero-photo {
+    border-radius: 70px 8px 8px 8px;
+    box-shadow: 8px 10px 0 var(--sand);
+  }
+  .project-art {
+    height: 150px;
+  }
+  .tags .shatter-tag {
+    font-size: 10px;
+    padding: 9px 11px;
+  }
+  .ticker > div {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shatter-layer {
+    display: none;
+  }
+  .motion-ready .reveal .shatter-tag {
+    opacity: 1;
+    transform: none;
+  }
+  .github-strip::after {
+    display: none;
+  }
+}
